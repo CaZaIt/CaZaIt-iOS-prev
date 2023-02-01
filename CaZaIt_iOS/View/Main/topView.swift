@@ -55,10 +55,10 @@ class topView: UIView {
         textField.placeholder = "search"
         textField.backgroundColor = UIColor(red: 0.898, green: 0.827, blue: 0.796, alpha: 1)
         textField.layer.cornerRadius = 20
+        textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
         textField.insetX = 47.25
         textField.addleftimage(image: UIImage(named: "search"))
-        textField.textColor = UIColor.white
         textField.font = UIFont(name: "AppleSDGothicNeoM00-Regular", size: 16)
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.layer.shadowColor = UIColor.black.cgColor

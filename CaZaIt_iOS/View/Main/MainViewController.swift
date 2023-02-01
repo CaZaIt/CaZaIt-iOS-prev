@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-        //MARK: -
+        //MARK: - 네비게이션 중복 수정 1/31
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -96,15 +96,48 @@ class MainViewController: UIViewController {
         
     }
 //MARK: - 네비게이션 중복 수정 1/31
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                self.view.endEditing(true)
+            }
+    
+}
+
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customcafeView", for: indexPath) as? customcafeView
+        cell?.backgroundColor = UIColor.white
+        cell?.layer.cornerRadius = 30
+        cell?.layer.shadowColor = UIColor.black.cgColor
+        cell?.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cell?.layer.shadowRadius = 4
+        cell?.layer.shadowOpacity = 0.25
+        return cell ?? UICollectionViewCell()
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width: CGFloat = 343
+        let height: CGFloat = 366
+
+        
+        return CGSize(width: width, height: height)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = InfoViewController()
         self.navigationController?.pushViewController(vc, animated : true)
         self.navigationItem.title = " "
         self.navigationController?.navigationBar.tintColor = .white
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-                self.view.endEditing(true)
-            }
+  
     
 }

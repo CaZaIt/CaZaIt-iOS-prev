@@ -36,25 +36,11 @@ class favoritesCustomCafeView: UICollectionViewCell {
         return label
     }()
     
-    let cafeDistance: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .black
-        label.textAlignment = .left
-        label.text = "220m"
-        label.numberOfLines = 1
-        
-        return label
-    }()
-    
     let cafeLocation: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
         label.textColor = .black
         label.textAlignment = .left
         label.text = "서울특별시 광진구 광나루로 375-1 2층(군자동)"
@@ -110,7 +96,6 @@ class favoritesCustomCafeView: UICollectionViewCell {
         backgroundColor = .white
         self.addSubview(cafeImage)
         self.addSubview(cafeName)
-        self.addSubview(cafeDistance)
         self.addSubview(cafeLocation)
         self.addSubview(cafeConfusion)
         self.addSubview(favoriteImage)
@@ -125,16 +110,11 @@ class favoritesCustomCafeView: UICollectionViewCell {
             
             cafeName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             cafeName.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -122),
-            cafeName.topAnchor.constraint(equalTo: cafeImage.bottomAnchor, constant: 8),
+            cafeName.topAnchor.constraint(equalTo: cafeImage.bottomAnchor, constant: 10),
             cafeName.heightAnchor.constraint(equalToConstant: 29),
             
-            
-            cafeDistance.bottomAnchor.constraint(equalTo: cafeName.bottomAnchor),
-            cafeDistance.leadingAnchor.constraint(equalTo: cafeName.trailingAnchor, constant: 4),
-            cafeDistance.heightAnchor.constraint(equalToConstant: 16),
-            
             cafeLocation.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            cafeLocation.topAnchor.constraint(equalTo: cafeDistance.bottomAnchor, constant: 5),
+            cafeLocation.topAnchor.constraint(equalTo: cafeName.bottomAnchor, constant: 5),
             cafeLocation.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15),
             
             cafeConfusion.topAnchor.constraint(equalTo: cafeLocation.bottomAnchor, constant: 15),
@@ -142,8 +122,9 @@ class favoritesCustomCafeView: UICollectionViewCell {
             cafeConfusion.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             cafeConfusion.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
             
-            favoriteImage.leadingAnchor.constraint(equalTo: cafeDistance.trailingAnchor, constant: 53),
+            favoriteImage.leadingAnchor.constraint(equalTo: cafeName.trailingAnchor, constant: 93.67),
             favoriteImage.topAnchor.constraint(equalTo: cafeImage.bottomAnchor, constant: 12),
+            
             
         ])
     }

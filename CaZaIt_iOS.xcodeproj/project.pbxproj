@@ -16,7 +16,6 @@
 		015626902983CF5000D038D4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156268F2983CF5000D038D4 /* MoreViewController.swift */; };
 		015626982983D81B00D038D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626972983D81B00D038D4 /* MainViewController.swift */; };
 		0156269C2983D87C00D038D4 /* bottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156269B2983D87C00D038D4 /* bottomView.swift */; };
-		0156269E2983D8A500D038D4 /* collectionviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156269D2983D8A500D038D4 /* collectionviewCell.swift */; };
 		015626A02983D8C800D038D4 /* customcafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156269F2983D8C800D038D4 /* customcafeView.swift */; };
 		015626AB2983D9BC00D038D4 /* UITextField+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626AA2983D9BC00D038D4 /* UITextField+Extenstion.swift */; };
 		015626AD2983D9DB00D038D4 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626AC2983D9DB00D038D4 /* topView.swift */; };
@@ -36,7 +35,6 @@
 		7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8882983B6DF00427E74 /* SceneDelegate.swift */; };
 		7A61C8902983B6E000427E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A61C88F2983B6E000427E74 /* Assets.xcassets */; };
 		7A61C8932983B6E000427E74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A61C8912983B6E000427E74 /* LaunchScreen.storyboard */; };
-		7AF4349029890BDF0057EE52 /* favoritesCollectionviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4348F29890BDF0057EE52 /* favoritesCollectionviewCell.swift */; };
 		7AF4349229890C320057EE52 /* favoritesTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4349129890C320057EE52 /* favoritesTopView.swift */; };
 		7AF4349429890C4E0057EE52 /* favoritesBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4349329890C4E0057EE52 /* favoritesBottomView.swift */; };
 		7AF4349629890C5E0057EE52 /* favoritesCustomCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4349529890C5E0057EE52 /* favoritesCustomCafeView.swift */; };
@@ -52,7 +50,6 @@
 		0156268F2983CF5000D038D4 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		015626972983D81B00D038D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0156269B2983D87C00D038D4 /* bottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomView.swift; sourceTree = "<group>"; };
-		0156269D2983D8A500D038D4 /* collectionviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionviewCell.swift; sourceTree = "<group>"; };
 		0156269F2983D8C800D038D4 /* customcafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customcafeView.swift; sourceTree = "<group>"; };
 		015626AA2983D9BC00D038D4 /* UITextField+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extenstion.swift"; sourceTree = "<group>"; };
 		015626AC2983D9DB00D038D4 /* topView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
@@ -75,7 +72,6 @@
 		7A61C88F2983B6E000427E74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A61C8922983B6E000427E74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A61C8942983B6E000427E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AF4348F29890BDF0057EE52 /* favoritesCollectionviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCollectionviewCell.swift; sourceTree = "<group>"; };
 		7AF4349129890C320057EE52 /* favoritesTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesTopView.swift; sourceTree = "<group>"; };
 		7AF4349329890C4E0057EE52 /* favoritesBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesBottomView.swift; sourceTree = "<group>"; };
 		7AF4349529890C5E0057EE52 /* favoritesCustomCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCustomCafeView.swift; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 				0156268D2983CF4B00D038D4 /* MyPageViewController.swift */,
 				0156268F2983CF5000D038D4 /* MoreViewController.swift */,
 				015626CD2985114300D038D4 /* FavoritesViewController.swift */,
-				7AF4348F29890BDF0057EE52 /* favoritesCollectionviewCell.swift */,
 				7AF4349129890C320057EE52 /* favoritesTopView.swift */,
 				7AF4349329890C4E0057EE52 /* favoritesBottomView.swift */,
 				7AF4349529890C5E0057EE52 /* favoritesCustomCafeView.swift */,
@@ -128,7 +123,6 @@
 				015626972983D81B00D038D4 /* MainViewController.swift */,
 				015626AC2983D9DB00D038D4 /* topView.swift */,
 				0156269B2983D87C00D038D4 /* bottomView.swift */,
-				0156269D2983D8A500D038D4 /* collectionviewCell.swift */,
 				0156269F2983D8C800D038D4 /* customcafeView.swift */,
 			);
 			path = Main;
@@ -380,12 +374,10 @@
 				015626BF2983E67600D038D4 /* RateView.swift in Sources */,
 				015626B92983E63800D038D4 /* Cafe.swift in Sources */,
 				7A61C8872983B6DF00427E74 /* AppDelegate.swift in Sources */,
-				7AF4349029890BDF0057EE52 /* favoritesCollectionviewCell.swift in Sources */,
 				015626902983CF5000D038D4 /* MoreViewController.swift in Sources */,
 				015626982983D81B00D038D4 /* MainViewController.swift in Sources */,
 				015626AD2983D9DB00D038D4 /* topView.swift in Sources */,
 				015626BD2983E66300D038D4 /* MyTableViewCell.swift in Sources */,
-				0156269E2983D8A500D038D4 /* collectionviewCell.swift in Sources */,
 				7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */,
 				015626C12983E68C00D038D4 /* Review.swift in Sources */,
 				015626862983CF2E00D038D4 /* UIColor+Extension.swift in Sources */,

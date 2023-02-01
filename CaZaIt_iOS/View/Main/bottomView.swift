@@ -28,7 +28,6 @@ class bottomView: UIView {
         let button = UIButton()
         
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.frame = CGRect(x:18, y:151, width: 37, height: 37)
         button.clipsToBounds = true
         button.setImage(UIImage(named:"filterButtonx1.png"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
@@ -75,12 +74,7 @@ class bottomView: UIView {
             filterLabel.leadingAnchor.constraint(equalTo: filterButton.trailingAnchor, constant: 10),
             filterLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
             filterLabel.heightAnchor.constraint(equalToConstant: 20)
-            
-//
-//            filterButton.topAnchor.constraint(equalTo: topAnchor, constant: 19),
-//            filterButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-//            filterLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25.5),
-//            filterLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 66),
+        
         
         ])
         
@@ -111,8 +105,8 @@ class bottomView: UIView {
                 path.addLine(to: CGPoint(x: x, y: 0))
                 x += 7
             }
-            //UIBezierPath(roundedRect)은 말그대로 frame을 둘러서 그리느라 사각형으로 그려집니다.
-            //따라서 선 하나 그어주는것은 cgPath로 그려줘야 해요
+            //UIBezierPath(roundedRect)은 말그대로 frame을 둘러서 그리느라 사각형으로 그려짐.
+            //따라서 선 하나 그어주는것은 cgPath로 그려주기
             borderLayer.path = UIBezierPath(cgPath: path).cgPath
         }
     
