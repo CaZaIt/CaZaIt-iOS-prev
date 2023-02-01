@@ -32,7 +32,7 @@ final class LoginViewController: UIViewController {
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
         textField.textColor = UIColor(r: 93, g: 36, b: 36)
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
     
@@ -49,7 +49,7 @@ final class LoginViewController: UIViewController {
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
         textField.textColor = UIColor(r: 93, g: 36, b: 36)
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
     
