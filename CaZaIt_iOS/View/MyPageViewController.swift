@@ -23,8 +23,8 @@ final class MyPageViewController: UIViewController {
     private let Label_1: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = UIColor(r: 141, g: 96, b: 96)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .center
         label.text = "로그인 하세요"
         label.numberOfLines = 1
@@ -42,7 +42,7 @@ final class MyPageViewController: UIViewController {
     private let payView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(r: 141, g: 96, b: 96)
+        view.backgroundColor = UIColor(r: 229, g: 211, b: 203)
         view.distribution = .fill
         view.spacing = 1
         view.axis = .vertical
@@ -56,7 +56,7 @@ final class MyPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .white
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .left
         label.text = "카자잇 페이"
         label.numberOfLines = 1
@@ -67,7 +67,7 @@ final class MyPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        label.textColor = .white
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .right
         label.text = "1111 ￦"
         label.numberOfLines = 1
@@ -85,22 +85,10 @@ final class MyPageViewController: UIViewController {
         return label
     }()
     
-//    let user: [User] = [User(profile: UIImage(named: "credit_card")!, name: "결제 내역"),
-//                            User(profile: UIImage(named: "credit_card")!, name: "결제 내역"),
-//                            User(profile: UIImage(named: "credit_card")!, name: "결제 내역"),
-//                            User(profile: UIImage(named: "credit_card")!, name: "결제 내역"),
-//                            User(profile: UIImage(named: "credit_card")!, name: "결제 내역") ]
-//
-//    let tableView: UITableView = {
-//            let tableView = UITableView()
-//            tableView.rowHeight = 100
-//            return tableView
-//        }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(r: 250, g: 240, b: 221)
+        self.view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         self.navigationController?.navigationBar.isHidden = true
         self.view.addSubview(self.Label_1)
         self.view.addSubview(self.Button_1)
@@ -150,9 +138,9 @@ final class MyPageViewController: UIViewController {
     }
     func layout() {
         view.addSubview(table)
-        table.backgroundColor = UIColor(r: 250, g: 240, b: 221)
+        table.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
+        table.topAnchor.constraint(equalTo: view.topAnchor, constant: 360).isActive = true
         table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         table.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -171,7 +159,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as UITableViewCell
         
         cell.textLabel?.text = testArr[indexPath.row]
-        cell.backgroundColor = UIColor(r: 250, g: 240, b: 221)
+        cell.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         
         return cell
     }
