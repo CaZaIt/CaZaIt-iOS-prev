@@ -125,6 +125,7 @@ class favoritesCustomCafeView: UICollectionViewCell {
             favoriteImage.leadingAnchor.constraint(equalTo: cafeName.trailingAnchor, constant: 93.67),
             favoriteImage.topAnchor.constraint(equalTo: cafeImage.bottomAnchor, constant: 12),
             
+            
         ])
     }
 }
