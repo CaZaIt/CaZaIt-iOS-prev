@@ -1,10 +1,3 @@
-//
-//  BaseView.swift
-//  RatingViewExample
-//
-//  Created by 김종권 on 2021/07/23.
-//
-
 import UIKit
 
 class BaseView: UIView {

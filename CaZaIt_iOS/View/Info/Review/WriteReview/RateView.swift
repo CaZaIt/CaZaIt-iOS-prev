@@ -1,10 +1,3 @@
-//
-//  RateView.swift
-//  RatingViewExample
-//
-//  Created by 김종권 on 2021/07/23.
-//
-
 import UIKit
 
 class RateView: BaseView {
@@ -19,7 +12,7 @@ class RateView: BaseView {
     lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.spacing = 12
+        view.spacing = 10
         view.backgroundColor = .white
 
         return view
@@ -53,9 +46,9 @@ class RateView: BaseView {
     private func setupLayout() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -95).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -623).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -605).isActive = true
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 180).isActive = true
     }
 
