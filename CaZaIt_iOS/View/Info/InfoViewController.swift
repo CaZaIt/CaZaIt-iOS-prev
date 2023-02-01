@@ -3,14 +3,6 @@ import SnapKit
 
 class InfoViewController: UIViewController{
     
-    //갈색
-    let brown: UILabel = {
-        let view = UILabel()
-        //view.frame = CGRect(x: 0, y: 0, width: 393, height: 44)
-        view.backgroundColor = UIColor(red: 0.363, green: 0.142, blue: 0.142, alpha: 1)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     //카페 사진
     lazy var imageBackgroundView: UIView = {
@@ -80,7 +72,20 @@ class InfoViewController: UIViewController{
     //하얀 배경
     let white: UILabel = {
         let view = UILabel()
-        view.frame = CGRect(x: 0, y: 0, width: 393, height: 96)
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let white2: UILabel = {
+        let view = UILabel()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let white3: UILabel = {
+        let view = UILabel()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -90,6 +95,7 @@ class InfoViewController: UIViewController{
     let cafename: UILabel = {
         let cafeName = UILabel()
         cafeName.text = "카페이름"
+        cafeName.textColor = .black
         cafeName.translatesAutoresizingMaskIntoConstraints = false
         cafeName.font = .boldSystemFont(ofSize: 26)
         return cafeName
@@ -99,6 +105,7 @@ class InfoViewController: UIViewController{
     let cafelocation: UILabel = {
         let cafeLocation = UILabel()
         cafeLocation.text = "카페 위치"
+        cafeLocation.textColor = .black
         cafeLocation.translatesAutoresizingMaskIntoConstraints = false
         cafeLocation.font = .italicSystemFont(ofSize: 13)
         return cafeLocation
@@ -120,9 +127,9 @@ class InfoViewController: UIViewController{
     private lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl()
 
-        // Remove background and divider colors
-        segmentedControl.backgroundColor = .clear
-        segmentedControl.tintColor = .clear
+//        // Remove background and divider colors
+//        segmentedControl.backgroundColor = UIColor(red: 0.49, green: 0.357, blue: 0.318, alpha: 1)
+//        segmentedControl.tintColor = UIColor(red: 0.49, green: 0.357, blue: 0.318, alpha: 1)
 
         // Append segments
         segmentedControl.insertSegment(withTitle: "카페정보", at: 0, animated: true)
@@ -175,10 +182,8 @@ class InfoViewController: UIViewController{
         view.dataSource = self
         view.delegate = self
         view.separatorStyle = .none
-        //view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         view.rowHeight = 113 //(101+12)
         view.register(MyTableViewCell.self, forCellReuseIdentifier: MyTableViewCell.className)
-        //view.register(MyTableViewCell.self, forCellReuseIdentifier: "cell")
 
         return view
     }()
@@ -202,6 +207,7 @@ class InfoViewController: UIViewController{
         return view
     }()
 
+    
     let align: UILabel = {
         let label = UILabel()
         label.text = "최근 작성순 ﹀"
@@ -272,7 +278,6 @@ class InfoViewController: UIViewController{
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(#imageLiteral(resourceName: "edit"), for: .normal)
-        //button.setImage(UIImage(systemName: "edit"), for: .normal)
         button.backgroundColor = UIColor(red: 0.363, green: 0.142, blue: 0.142, alpha: 1)
         button.imageView?.contentMode = .scaleAspectFit
         button.layer.cornerRadius = 51 / 2
@@ -282,65 +287,164 @@ class InfoViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //let mapView = NMFMapView(frame: view.frame)
-        //view.addSubview(mapView)
-        
-        self.navigationController?.navigationBar.isHidden = false
-        
-        let backbutton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationItem.backBarButtonItem = backbutton
-        self.navigationItem.backBarButtonItem?.tintColor = .white
-        //backbutton.width
-        
+        view.backgroundColor = UIColor(red: 0.363, green: 0.142, blue: 0.142, alpha: 1)
 
-        
-        view.addSubview(brown)
-        brown.snp.makeConstraints { maker in
-            maker.top.equalTo(view.snp.top)
-            maker.width.equalToSuperview()
-            maker.height.equalTo(54)
-            
-        }
-        
-        view.addSubview(imageView1)
-        NSLayoutConstraint.activate([
-            imageView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 54),
-            imageView1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView1.widthAnchor.constraint(equalToConstant: 393),
-            imageView1.heightAnchor.constraint(equalToConstant: 300),
-        ])
-        
-        view.addSubview(imageView2)
-        NSLayoutConstraint.activate([
-            imageView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 54),
-            imageView2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView2.widthAnchor.constraint(equalToConstant: 393),
-            imageView2.heightAnchor.constraint(equalToConstant: 300),
-        ])
-        
-        view.addSubview(imageView3)
-        NSLayoutConstraint.activate([
-            imageView3.topAnchor.constraint(equalTo: view.topAnchor, constant: 54),
-            imageView3.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView3.widthAnchor.constraint(equalToConstant: 393),
-            imageView3.heightAnchor.constraint(equalToConstant: 300),
-        ])
+        self.navigationController?.navigationBar.isHidden = false
+
+//        let backbutton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//        self.navigationItem.backBarButtonItem = backbutton
+//        self.navigationItem.backBarButtonItem?.tintColor = .white
+
         setupDelegate()
         configure()
 
+        //information
+        view.addSubview(containerView)
+        containerView.addSubview(informationTableView)
+        containerView.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom)
+            maker.width.equalToSuperview()
+            maker.height.equalTo(311) //information 길이
+        }
+
+        informationTableView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+
+
+        //review
+        view.addSubview(review)
+        review.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom)
+            maker.width.equalTo(view.snp.width)
+            maker.height.equalTo(392)
+        }
+        review.isHidden = true
+        
+        review.addSubview(reviewContainerView)
+        reviewContainerView.addSubview(reviewTableView)
+
+        reviewContainerView.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom).inset(-80)
+            maker.leading.equalTo(view.snp.leading)
+            maker.centerX.equalToSuperview()
+            maker.width.equalToSuperview()
+            maker.height.equalTo(312) //information 길이
+        }
+        
+
+        reviewTableView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+        
+        
+        review.addSubview(align)
+        NSLayoutConstraint.activate([
+            align.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 34),
+            align.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24)
+        ])
+        
+        review.addSubview(average_review)
+        NSLayoutConstraint.activate([
+            average_review.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            average_review.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 294.68)
+        ])
+        
+        review.addSubview(five)
+        NSLayoutConstraint.activate([
+            five.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 35),
+            five.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 346.68)
+        ])
+        
+        review.addSubview(average_star)
+        average_star.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom).inset(-28)
+            maker.leading.equalTo(view.snp.leading).inset(255)
+        }
+        
+        review.addSubview(line)
+        line.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom).inset(-64)
+            maker.width.equalTo(351)
+            maker.height.equalTo(1)
+            maker.centerX.equalTo(view.snp.centerX)
+        }
+        
+        view.addSubview(white3)
+        white3.snp.makeConstraints { maker in
+            maker.top.equalTo(segmentedControl.snp.bottom)
+            maker.bottom.equalTo(line.snp.top).offset(20)
+            maker.leading.trailing.equalToSuperview()
+            }
+        white3.isHidden = true
+        
+
+    }
+    
+    
+    private func setupDelegate() {
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+    }
+
+    private func configure() {
+    
+        view.addSubview(imageView1)
+        imageView1.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(230)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)        }
+
+
+        view.addSubview(imageView2)
+        imageView2.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(230)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)        }
+
+        view.addSubview(imageView3)
+        imageView3.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(230)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)        }
+        
+        view.addSubview(imageBackgroundView)
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
+        vc1.view.addSubview(imageView1)
+        vc2.view.addSubview(imageView2)
+        vc3.view.addSubview(imageView3)
+        
+        imageBackgroundView.snp.makeConstraints { maker in
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(230)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
+        }
+
+
+        pageViewController.view.snp.makeConstraints { maker in
+            maker.edges.equalTo(imageBackgroundView.snp.edges)
+        }
+        pageViewController.didMove(toParent: self)
+        
+        
+        view.addSubview(white)
+        white.snp.makeConstraints { maker in
+            maker.top.equalTo(imageBackgroundView.snp.bottom)
+            maker.bottom.equalTo(imageBackgroundView.snp.bottom).offset(90)
+            maker.leading.trailing.equalToSuperview()
+        }
+        
+        
         if let firstVC = dataViewControllers.first {
             pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
 
-        
-        view.addSubview(white)
-        NSLayoutConstraint.activate([
-            white.topAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor),
-            white.widthAnchor.constraint(equalToConstant: 393),
-            white.heightAnchor.constraint(equalToConstant: 96)
-        ])
-        
+
         view.addSubview(cafename)
         NSLayoutConstraint.activate([
             cafename.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27),
@@ -352,19 +456,19 @@ class InfoViewController: UIViewController{
             cafelocation.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27),
             cafelocation.topAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: 60)
         ])
-        
-        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+
+
         view.addSubview(segmentedControlContainerView)
         segmentedControlContainerView.addSubview(segmentedControl)
 
-        // Constrain the container view to the view controller
-        let safeLayoutGuide = self.view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            segmentedControlContainerView.topAnchor.constraint(equalTo: white.bottomAnchor),
-            segmentedControlContainerView.leadingAnchor.constraint(equalTo: safeLayoutGuide.leadingAnchor),
-            segmentedControlContainerView.widthAnchor.constraint(equalToConstant: 393),
-            segmentedControlContainerView.heightAnchor.constraint(equalToConstant: 58)
-            ])
+        
+        segmentedControlContainerView.snp.makeConstraints { maker in
+            maker.top.equalTo(white.snp.bottom)
+            maker.bottom.equalTo(white.snp.bottom).offset(58)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
+        }
+
 
         // Constrain the segmented control to the container view
         NSLayoutConstraint.activate([
@@ -374,127 +478,34 @@ class InfoViewController: UIViewController{
             segmentedControl.centerYAnchor.constraint(equalTo: segmentedControlContainerView.centerYAnchor)
             ])
         
-        //information
-        view.addSubview(containerView)
-        containerView.addSubview(informationTableView)
-        containerView.snp.makeConstraints { maker in
-            maker.top.equalTo(segmentedControl.snp.bottom)
-            maker.width.equalToSuperview()
-            maker.height.equalTo(392) //information 길이
-        }
-
-        informationTableView.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview()
-        }
         
         //location
-        view.addSubview(locationImageView)
-        locationImageView.isHidden = true
-        NSLayoutConstraint.activate([
-            locationImageView.topAnchor.constraint(equalTo: white.bottomAnchor, constant: 81),
-            locationImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 27),
-            locationImageView.widthAnchor.constraint(equalToConstant: 339),
-            locationImageView.heightAnchor.constraint(equalToConstant: 282)
-        ])
         
-        //view.addSubview(mapView)
-        //review
-        view.addSubview(review)
-        review.snp.makeConstraints { maker in
+        view.addSubview(white2)
+        white2.snp.makeConstraints { maker in
             maker.top.equalTo(segmentedControl.snp.bottom)
-            maker.width.equalTo(view.snp.width)
-            maker.height.equalTo(392)
-        }
-        review.isHidden = true
-        
-        review.addSubview(align)
-        NSLayoutConstraint.activate([
-            align.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 50),
-            align.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24)
-        ])
-        
-        review.addSubview(average_review)
-        NSLayoutConstraint.activate([
-            average_review.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 36.61),
-            average_review.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 294.68)
-        ])
-        
-        review.addSubview(five)
-        NSLayoutConstraint.activate([
-            five.bottomAnchor.constraint(equalTo: white.bottomAnchor, constant: 125),
-            five.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 346.68)
-        ])
-        
-        review.addSubview(average_star)
-        average_star.snp.makeConstraints { maker in
-            maker.top.equalTo(segmentedControl.snp.bottom).inset(-43)
-            maker.leading.equalTo(view.snp.leading).inset(255)
-        }
-        
-        review.addSubview(line)
-        line.snp.makeConstraints { maker in
-            maker.top.equalTo(segmentedControl.snp.bottom).inset(-73)
-            maker.width.equalTo(351)
-            maker.height.equalTo(1)
-            maker.centerX.equalTo(view.snp.centerX)
-        }
-        
-    
-
-        review.addSubview(reviewContainerView)
-        reviewContainerView.addSubview(reviewTableView)
-
-        reviewContainerView.snp.makeConstraints { maker in
-            maker.top.equalTo(segmentedControl.snp.bottom).inset(-80)
-            maker.leading.equalTo(view.snp.leading)
-            maker.width.equalTo(393)
-            maker.height.equalTo(312) //information 길이
-        }
-        
-
-        reviewTableView.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview()
-        }
-    }
-    
-    
-    private func setupDelegate() {
-        pageViewController.dataSource = self
-        pageViewController.delegate = self
-    }
-
-    private func configure() {
-        
-        view.addSubview(imageBackgroundView)
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        vc1.view.addSubview(imageView1)
-        vc2.view.addSubview(imageView2)
-        vc3.view.addSubview(imageView3)
-        
-        
-        imageBackgroundView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.snp.top).offset(54)
-            maker.width.equalToSuperview()
+            maker.leading.trailing.equalToSuperview()
             maker.height.equalTo(300)
-            
         }
-
-
-        pageViewController.view.snp.makeConstraints { maker in
-            maker.edges.equalTo(imageBackgroundView.snp.edges)
+        white2.isHidden = true
+        
+        view.addSubview(locationImageView)
+        locationImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(white.snp.bottom).offset(81)
+            maker.centerX.equalTo(view.snp.centerX)
+            maker.width.equalTo(339)
+            maker.height.equalTo(269) //information 길이
         }
-        pageViewController.didMove(toParent: self)
-
-
+        locationImageView.isHidden = true
+        
     }
     
     private func editButton() {
         view.addSubview(editbutton)
         view.bringSubviewToFront(self.editbutton)
         editbutton.snp.makeConstraints { maker in
-            maker.top.equalTo(view.snp.top).offset(700)
-            maker.leading.equalTo(view.snp.leading).offset(329)
+            maker.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(329)
+            maker.top.equalTo(segmentedControlContainerView.snp.bottom).offset(210)
             maker.width.height.equalTo(51)
         }
     }
@@ -534,16 +545,20 @@ class InfoViewController: UIViewController{
         case 0:
             view.addSubview(containerView)
             containerView.isHidden = false
+            white2.isHidden = true
             locationImageView.isHidden = true
+            white3.isHidden = true
             review.isHidden = true
             editbutton.isHidden = true
 
         
         case 1:
+            view.addSubview(white2)
             view.addSubview(locationImageView)
-            //view.addSubview(mapView)
             containerView.isHidden = true
+            white2.isHidden = false
             locationImageView.isHidden = false
+            white3.isHidden = true
             review.isHidden = true
             editbutton.isHidden = true
 
@@ -552,24 +567,26 @@ class InfoViewController: UIViewController{
             view.addSubview(review)
             editButton()
             containerView.isHidden = true
+            white2.isHidden = true
             locationImageView.isHidden = true
+            white3.isHidden = false
             review.isHidden = false
             editbutton.isHidden = false
         }
     }
-    /*
-    @objc func openNextView() {
-        let nextVC = WriteReviewViewController()
-        present(nextVC, animated: true, completion: nil)
-    }*/
     
     @objc func buttonClicked() {
         let nextVC = WriteReviewViewController()
-        navigationController?.pushViewController(nextVC, animated: true)
-        //self.navigationItem.title = "리뷰쓰기"
-        //self.navigationController?.navigationBar.tintColor = .white
-        
+        present(nextVC, animated: true, completion: nil)
     }
+    
+//    @objc func buttonClicked() {
+//        let nextVC = WriteReviewViewController()
+//        navigationController?.pushViewController(nextVC, animated: true)
+//        //self.navigationItem.title = "리뷰쓰기"
+//        //self.navigationController?.navigationBar.tintColor = .white
+//
+//    }
 
     
 }
