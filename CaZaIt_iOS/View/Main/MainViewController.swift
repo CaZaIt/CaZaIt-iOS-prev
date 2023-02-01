@@ -137,6 +137,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         self.navigationController?.pushViewController(vc, animated : true)
         self.navigationItem.title = " "
         self.navigationController?.navigationBar.tintColor = .white
+        //self.navigationController?.navigationBar.backgroundColor = .clear
     }
   
     
