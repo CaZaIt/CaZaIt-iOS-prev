@@ -26,7 +26,7 @@ final class LoginViewController: UIViewController {
         textField.placeholder = "Username"
         textField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         textField.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
-        textField.isSecureTextEntry = true
+        textField.isSecureTextEntry = false
         textField.layer.cornerRadius = 15
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor

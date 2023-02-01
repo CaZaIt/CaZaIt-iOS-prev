@@ -7,6 +7,7 @@
 
 
 import Foundation
+import SnapKit
 import UIKit
 
 
@@ -49,6 +50,24 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as UITableViewCell
+        
+        lazy var imgView: UIImageView = {
+            let view = UIImageView()
+            view.contentMode = .scaleAspectFit
+            view.image = UIImage(systemName: "sun.max")
+            return view
+        }()
+        cell.contentView.addSubview(imgView)
+        imgView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.width.equalTo(21.87)
+            make.height.equalTo(27.33)
+            make.left.equalToSuperview().inset(36.47)
+        }
+        cell.textLabel?.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalTo(imgView.snp.right).offset(24.67)
+        }
         
         cell.textLabel?.text = testArr[indexPath.row]
         
