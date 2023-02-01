@@ -18,10 +18,10 @@ final class SignUpViewController: UIViewController {
     private let idLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = UIColor(r: 141, g: 96, b: 96)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .center
-        label.text = "    아이디"
+        label.text = "    닉네임"
         label.numberOfLines = 1
         return label
     }()
@@ -32,14 +32,14 @@ final class SignUpViewController: UIViewController {
         textField.insetX = 16
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "예: kazait123"
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         textField.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         textField.isSecureTextEntry = false
         textField.layer.cornerRadius = 15
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
     
@@ -75,8 +75,8 @@ final class SignUpViewController: UIViewController {
     private let pwLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = UIColor(r: 141, g: 96, b: 96)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .center
         label.text = "    비밀번호"
         label.numberOfLines = 1
@@ -89,14 +89,16 @@ final class SignUpViewController: UIViewController {
         textField.insetX = 16
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "비밀번호를 입력해주세요"
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         textField.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         textField.isSecureTextEntry = true
         textField.layer.cornerRadius = 15
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
+
+        
         return textField
     }()
     
@@ -104,8 +106,8 @@ final class SignUpViewController: UIViewController {
     private let pwLabel_1: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = UIColor(r: 141, g: 96, b: 96)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .center
         label.text = "    비밀번호 확인"
         label.numberOfLines = 1
@@ -125,7 +127,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
     
@@ -133,8 +135,8 @@ final class SignUpViewController: UIViewController {
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = UIColor(r: 141, g: 96, b: 96)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor(r: 93, g: 36, b: 36)
         label.textAlignment = .center
         label.text = "    이메일"
         label.numberOfLines = 1
@@ -154,7 +156,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
-        textField.setPlaceholder(color: UIColor(r: 93, g: 36, b: 36))
+        textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
     
@@ -172,16 +174,19 @@ final class SignUpViewController: UIViewController {
     }()
     
     //가입하기 버튼
-    private let joinButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("가입하기", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = UIColor(r: 94, g: 36, b: 36)
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-        return button
+    let joinButton: UIButton = {
+        var button1 = UIButton()
+        button1.translatesAutoresizingMaskIntoConstraints = false
+        button1.backgroundColor = UIColor(red: 0.363, green: 0.142, blue: 0.142, alpha: 1)
+        button1.imageView?.contentMode = .scaleAspectFit
+        button1.layer.cornerRadius = 20
+        button1.setTitle("가입하기", for: .normal)
+        button1.setTitleColor(.white, for: .normal)
+        button1.layer.shadowColor = UIColor.gray.cgColor
+        button1.layer.shadowOpacity = 1.0
+        button1.layer.shadowRadius = 6
+        button1.layer.shadowOffset = CGSize(width: 0, height: 5)
+        return button1
     }()
     
     
@@ -205,49 +210,49 @@ final class SignUpViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         //뷰안에 각 오브젝트 넣기
-        self.view.addSubview(self.idLabel)
-        self.view.addSubview(self.idField)
-        self.view.addSubview(self.idButton)
-        self.view.addSubview(self.descriptionLabel)
+        self.view.addSubview(self.emailLabel)
+        self.view.addSubview(self.emailField)
+        self.view.addSubview(self.emailButton)
         self.view.addSubview(self.pwLabel)
         self.view.addSubview(self.pwField)
         self.view.addSubview(self.pwLabel_1)
         self.view.addSubview(self.pwField_1)
-        self.view.addSubview(self.emailLabel)
-        self.view.addSubview(self.emailField)
-        self.view.addSubview(self.emailButton)
+        self.view.addSubview(self.idLabel)
+        self.view.addSubview(self.idField)
+        self.view.addSubview(self.idButton)
+//        self.view.addSubview(self.descriptionLabel)
         self.view.addSubview(self.joinButton)
         
         
         //오토레이아웃 설정
         NSLayoutConstraint.activate([
-            self.idLabel.heightAnchor.constraint(equalToConstant: 30),
-            self.idLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.idLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
+            self.emailLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.emailLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+            self.emailLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
             
-            self.idField.heightAnchor.constraint(equalToConstant: 40),
-            self.idField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.idField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
-            self.idField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
+            self.emailField.heightAnchor.constraint(equalToConstant: 40),
+            self.emailField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+            self.emailField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
+            self.emailField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
             
-            self.idButton.heightAnchor.constraint(equalToConstant: 40),
-            self.idButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250),
-            self.idButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
-            self.idButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
+            self.emailButton.heightAnchor.constraint(equalToConstant: 40),
+            self.emailButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250),
+            self.emailButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
+            self.emailButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
             
-            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
-            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
-            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 214),
+//            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
+//            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+//            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
+//            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 214),
             
             self.pwLabel.heightAnchor.constraint(equalToConstant: 30),
             self.pwLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.pwLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 265),
+            self.pwLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 255),
             
             self.pwField.heightAnchor.constraint(equalToConstant: 40),
             self.pwField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
             self.pwField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
-            self.pwField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 295),
+            self.pwField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 285),
             
             self.pwLabel_1.heightAnchor.constraint(equalToConstant: 30),
             self.pwLabel_1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
@@ -258,24 +263,24 @@ final class SignUpViewController: UIViewController {
             self.pwField_1.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
             self.pwField_1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 395),
             
-            self.emailLabel.heightAnchor.constraint(equalToConstant: 30),
-            self.emailLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.emailLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 465),
+            self.idLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.idLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+            self.idLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 470),
             
-            self.emailField.heightAnchor.constraint(equalToConstant: 40),
-            self.emailField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            self.emailField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
-            self.emailField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 495),
+            self.idField.heightAnchor.constraint(equalToConstant: 40),
+            self.idField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+            self.idField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
+            self.idField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500),
             
-            self.emailButton.heightAnchor.constraint(equalToConstant: 40),
-            self.emailButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250),
-            self.emailButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
-            self.emailButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 495),
+            self.idButton.heightAnchor.constraint(equalToConstant: 40),
+            self.idButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250),
+            self.idButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
+            self.idButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500),
             
             
-            self.joinButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 585),
-            self.joinButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 150),
-            self.joinButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
+            self.joinButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 595),
+            self.joinButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120),
+            self.joinButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -120),
             self.joinButton.heightAnchor.constraint(equalToConstant: 40),
         ])
         
