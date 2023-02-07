@@ -162,6 +162,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = testArr[indexPath.row]
         cell.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
+        cell.textLabel?.textColor = .black
         
         return cell
     }

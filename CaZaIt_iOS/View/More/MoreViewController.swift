@@ -19,8 +19,9 @@ final class MoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = .gray
+        
+        self.view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
+        
         table.delegate = self
         table.dataSource = self
         
@@ -70,6 +71,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.textLabel?.text = testArr[indexPath.row]
+        cell.textLabel?.textColor = .black
         
         return cell
     }
