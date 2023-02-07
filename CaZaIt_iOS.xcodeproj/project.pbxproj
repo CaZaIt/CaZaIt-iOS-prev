@@ -30,6 +30,12 @@
 		015626C52983E6B300D038D4 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626C42983E6B300D038D4 /* ReviewTableViewCell.swift */; };
 		015626C72983E6F400D038D4 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626C62983E6F400D038D4 /* WriteReviewViewController.swift */; };
 		015626CE2985114300D038D4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015626CD2985114300D038D4 /* FavoritesViewController.swift */; };
+		0156271F2992650C00D038D4 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015627172992650C00D038D4 /* NetworkResult.swift */; };
+		015627212992650C00D038D4 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015627192992650C00D038D4 /* SignUpService.swift */; };
+		015627222992650C00D038D4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271A2992650C00D038D4 /* LoginModel.swift */; };
+		015627232992650C00D038D4 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271B2992650C00D038D4 /* SignupModel.swift */; };
+		015627252992650C00D038D4 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271D2992650C00D038D4 /* LoginService.swift */; };
+		015627262992650C00D038D4 /* APIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271E2992650C00D038D4 /* APIContants.swift */; };
 		0A976B35029DA9F11F70CF8B /* Pods_CaZaIt_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */; };
 		7A61C8872983B6DF00427E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8862983B6DF00427E74 /* AppDelegate.swift */; };
 		7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8882983B6DF00427E74 /* SceneDelegate.swift */; };
@@ -64,6 +70,12 @@
 		015626C42983E6B300D038D4 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		015626C62983E6F400D038D4 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		015626CD2985114300D038D4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		015627172992650C00D038D4 /* NetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		015627192992650C00D038D4 /* SignUpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		0156271A2992650C00D038D4 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		0156271B2992650C00D038D4 /* SignupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		0156271D2992650C00D038D4 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		0156271E2992650C00D038D4 /* APIContants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIContants.swift; sourceTree = "<group>"; };
 		182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaZaIt_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		197D9EBB48678D619D0ACF46 /* Pods-CaZaIt_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaZaIt_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CaZaIt_iOS/Pods-CaZaIt_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7A61C8832983B6DF00427E74 /* CaZaIt_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaZaIt_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,17 +114,14 @@
 		015626AF2983E49C00D038D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				015627152992641C00D038D4 /* Favorites */,
+				01562714299263D800D038D4 /* More */,
+				015627132992639900D038D4 /* MyPage */,
+				015627122992637800D038D4 /* TabBar */,
 				015626CC2983ED8300D038D4 /* Info */,
 				015626B22983E55D00D038D4 /* SignUp */,
 				015626B12983E54A00D038D4 /* Login */,
 				015626B02983E4C900D038D4 /* Main */,
-				0156268B2983CF4600D038D4 /* TapBarViewController.swift */,
-				0156268D2983CF4B00D038D4 /* MyPageViewController.swift */,
-				0156268F2983CF5000D038D4 /* MoreViewController.swift */,
-				015626CD2985114300D038D4 /* FavoritesViewController.swift */,
-				7AF4349129890C320057EE52 /* favoritesTopView.swift */,
-				7AF4349329890C4E0057EE52 /* favoritesBottomView.swift */,
-				7AF4349529890C5E0057EE52 /* favoritesCustomCafeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,11 +195,106 @@
 			isa = PBXGroup;
 			children = (
 				015626BA2983E65000D038D4 /* InfoViewController.swift */,
-				015626CA2983ECFD00D038D4 /* Review */,
-				015626C92983ECE600D038D4 /* Map */,
 				015626C82983EC8200D038D4 /* Infomation */,
+				015626C92983ECE600D038D4 /* Map */,
+				015626CA2983ECFD00D038D4 /* Review */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		015627122992637800D038D4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0156268B2983CF4600D038D4 /* TapBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		015627132992639900D038D4 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				0156268D2983CF4B00D038D4 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		01562714299263D800D038D4 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				0156268F2983CF5000D038D4 /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		015627152992641C00D038D4 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				015627162992649400D038D4 /* Favorites_Cell */,
+				015626CD2985114300D038D4 /* FavoritesViewController.swift */,
+				7AF4349129890C320057EE52 /* favoritesTopView.swift */,
+				7AF4349329890C4E0057EE52 /* favoritesBottomView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		015627162992649400D038D4 /* Favorites_Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7AF4349529890C5E0057EE52 /* favoritesCustomCafeView.swift */,
+			);
+			path = Favorites_Cell;
+			sourceTree = "<group>";
+		};
+		015627272992676C00D038D4 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				0156271E2992650C00D038D4 /* APIContants.swift */,
+				015627172992650C00D038D4 /* NetworkResult.swift */,
+				01562729299267DC00D038D4 /* SignUp_Service */,
+				01562728299267AD00D038D4 /* LogIn_Service */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		01562728299267AD00D038D4 /* LogIn_Service */ = {
+			isa = PBXGroup;
+			children = (
+				0156271D2992650C00D038D4 /* LoginService.swift */,
+			);
+			path = LogIn_Service;
+			sourceTree = "<group>";
+		};
+		01562729299267DC00D038D4 /* SignUp_Service */ = {
+			isa = PBXGroup;
+			children = (
+				015627192992650C00D038D4 /* SignUpService.swift */,
+			);
+			path = SignUp_Service;
+			sourceTree = "<group>";
+		};
+		0156272A2992681F00D038D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0156272C2992684100D038D4 /* SignUp_Model */,
+				0156272B2992683200D038D4 /* LogIn_Model */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0156272B2992683200D038D4 /* LogIn_Model */ = {
+			isa = PBXGroup;
+			children = (
+				0156271A2992650C00D038D4 /* LoginModel.swift */,
+			);
+			path = LogIn_Model;
+			sourceTree = "<group>";
+		};
+		0156272C2992684100D038D4 /* SignUp_Model */ = {
+			isa = PBXGroup;
+			children = (
+				0156271B2992650C00D038D4 /* SignupModel.swift */,
+			);
+			path = SignUp_Model;
 			sourceTree = "<group>";
 		};
 		03574F20EFF34FBE2C5E9020 /* Pods */ = {
@@ -223,6 +327,8 @@
 		7A61C8852983B6DF00427E74 /* CaZaIt_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0156272A2992681F00D038D4 /* Models */,
+				015627272992676C00D038D4 /* APIServices */,
 				015626AF2983E49C00D038D4 /* View */,
 				015626AE2983E47400D038D4 /* Extension */,
 				7A61C8862983B6DF00427E74 /* AppDelegate.swift */,
@@ -364,6 +470,7 @@
 				7AF4349229890C320057EE52 /* favoritesTopView.swift in Sources */,
 				015626C52983E6B300D038D4 /* ReviewTableViewCell.swift in Sources */,
 				015626842983CF2700D038D4 /* LoginViewController.swift in Sources */,
+				015627262992650C00D038D4 /* APIContants.swift in Sources */,
 				015626C32983E69D00D038D4 /* ReviewBaseTableViewCell.swift in Sources */,
 				0156268E2983CF4B00D038D4 /* MyPageViewController.swift in Sources */,
 				015626B72983E61C00D038D4 /* BaseView.swift in Sources */,
@@ -378,13 +485,18 @@
 				015626982983D81B00D038D4 /* MainViewController.swift in Sources */,
 				015626AD2983D9DB00D038D4 /* topView.swift in Sources */,
 				015626BD2983E66300D038D4 /* MyTableViewCell.swift in Sources */,
+				015627222992650C00D038D4 /* LoginModel.swift in Sources */,
+				015627212992650C00D038D4 /* SignUpService.swift in Sources */,
+				0156271F2992650C00D038D4 /* NetworkResult.swift in Sources */,
 				7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */,
 				015626C12983E68C00D038D4 /* Review.swift in Sources */,
+				015627252992650C00D038D4 /* LoginService.swift in Sources */,
 				015626862983CF2E00D038D4 /* UIColor+Extension.swift in Sources */,
 				015626CE2985114300D038D4 /* FavoritesViewController.swift in Sources */,
 				0156268C2983CF4600D038D4 /* TapBarViewController.swift in Sources */,
 				015626882983CF3500D038D4 /* InsetTextField.swift in Sources */,
 				015626BB2983E65000D038D4 /* InfoViewController.swift in Sources */,
+				015627232992650C00D038D4 /* SignupModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

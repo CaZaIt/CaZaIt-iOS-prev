@@ -136,17 +136,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc func onPressLoginButton(sender: Any) {
-        let nav = UINavigationController()
-        nav.modalPresentationStyle = .fullScreen
-        nav.navigationBar.barTintColor = .white
-        nav.navigationBar.tintColor = UIColor(w: 42)
-        
-       //MARK: - 네비게이션 중복 수정 1/31
-        nav.navigationBar.isHidden = true
-        
-        let controller = TabBarViewController()
-        nav.viewControllers = [controller]
-        self.present(nav, animated: true, completion: nil)
+        login()
     }
     
     @objc private func onPressSignupButton(sender: Any) {
@@ -178,4 +168,59 @@ final class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
                 self.view.endEditing(true)
             }
+}
+
+
+extension LoginViewController {
+    
+    
+    func login() {
+        
+        guard let email = idtextField.text else {return}
+        guard let passward = passwordtextField.text else {return}
+        
+        
+        LoginSercive.shared.login(email: email, password: passward) { [self] response in
+            switch response {
+            case .success(let data):
+                
+                guard let data = data as? LoginResponse else { return }
+                
+                if data.result == "SUCCESS"{
+                    UserDefaults.standard.set(data.data?.jwtToken, forKey: "jwtToken")
+                    let nav = UINavigationController()
+                    nav.modalPresentationStyle = .fullScreen
+                    nav.navigationBar.barTintColor = .white
+                    nav.navigationBar.tintColor = UIColor(w: 42)
+                    
+                   //MARK: - 네비게이션 중복 수정 1/31
+                    nav.navigationBar.isHidden = true
+                    
+                    let controller = TabBarViewController()
+                    nav.viewControllers = [controller]
+                    self.present(nav, animated: true, completion: nil)
+                    print(data)
+                }
+                else {
+                    let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        //            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
+        //            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    print(data.message)
+                }
+                
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
 }

@@ -39,6 +39,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
+        textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
@@ -96,6 +97,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
+        textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
 
         
@@ -127,6 +129,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
+        textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
@@ -156,6 +159,7 @@ final class SignUpViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor(r: 125, g: 91, b: 81).cgColor
         textField.layer.borderWidth = 1
+        textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
         return textField
     }()
@@ -320,10 +324,41 @@ final class SignUpViewController: UIViewController {
 //            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
             
             present(alert, animated: true, completion: nil)
+            print("회원가입 성공")
+            signup()
         }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
                 self.view.endEditing(true)
             }
     
+}
+
+
+extension SignUpViewController {
+    
+    
+    func signup() {
+        
+        guard let email = emailField.text else { return }
+        guard let passward = pwField.text else { return }
+        guard let nickname = idField.text else { return }
+        
+        
+        SignUpService.shared.signup(nickname: nickname, email: email, password: passward) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? SignupResponse else { return }
+                print(data)
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
 }
