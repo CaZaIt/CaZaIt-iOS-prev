@@ -105,6 +105,7 @@
 		015626AE2983E47400D038D4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				015626872983CF3500D038D4 /* InsetTextField.swift */,
 				015626AA2983D9BC00D038D4 /* UITextField+Extenstion.swift */,
 				015626852983CF2E00D038D4 /* UIColor+Extension.swift */,
 			);
@@ -333,7 +334,6 @@
 				015626AE2983E47400D038D4 /* Extension */,
 				7A61C8862983B6DF00427E74 /* AppDelegate.swift */,
 				7A61C8882983B6DF00427E74 /* SceneDelegate.swift */,
-				015626872983CF3500D038D4 /* InsetTextField.swift */,
 				7A61C88F2983B6E000427E74 /* Assets.xcassets */,
 				7A61C8912983B6E000427E74 /* LaunchScreen.storyboard */,
 				7A61C8942983B6E000427E74 /* Info.plist */,
