@@ -318,13 +318,11 @@ final class SignUpViewController: UIViewController {
         
     @objc func buttonClicked_3() {
             // if clicked btn, present alert
-            let alert = UIAlertController(title: "가입이 완료되었습니다", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
-            
-            present(alert, animated: true, completion: nil)
-            print("회원가입 성공")
+//            let alert = UIAlertController(title: "가입이 완료되었습니다", message: "", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+//
+//            present(alert, animated: true, completion: nil)
+//            print("회원가입 성공")
             signup()
         }
     
@@ -349,6 +347,10 @@ extension SignUpViewController {
             switch response {
             case .success(let data):
                 guard let data = data as? SignupResponse else { return }
+                let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
                 print(data)
             case .requestErr(let err):
                 print(err)

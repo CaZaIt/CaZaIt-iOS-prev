@@ -12,7 +12,7 @@ struct APIConstants {
     static let baseURL = "https://cazait.shop"
     
     // MARK: - Feature URL
-    static let loginURL = baseURL + "/api/users/log-in"
+    static let loginURL = baseURL + "/api/auths/log-in?role=user"
     
     static let signupURL = baseURL + "/api/users/sign-up"
     
