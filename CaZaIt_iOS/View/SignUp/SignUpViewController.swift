@@ -308,12 +308,14 @@ final class SignUpViewController: UIViewController {
     
     @objc func buttonClicked_2() {
             // if clicked btn, present alert
-            let alert = UIAlertController(title: "사용 가능한 이메일입니다", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
-            
-            present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "사용 가능한 이메일입니다", message: "", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+//
+//
+//            present(alert, animated: true, completion: nil)
+        
+        //이메일 중복확인 주석으로 처리해놓기 일단
+//            emailcheck()
         }
         
     @objc func buttonClicked_3() {
@@ -347,6 +349,32 @@ extension SignUpViewController {
             switch response {
             case .success(let data):
                 guard let data = data as? SignupResponse else { return }
+                let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                print(data)
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func emailcheck() {
+        
+        guard let email = emailField.text else { return }
+        
+        
+        emailCheckService.shared.emailcheck(email: email) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? EmailCheckResponse else { return }
                 let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 

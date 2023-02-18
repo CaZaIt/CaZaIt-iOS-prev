@@ -36,6 +36,8 @@
 		015627232992650C00D038D4 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271B2992650C00D038D4 /* SignupModel.swift */; };
 		015627252992650C00D038D4 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271D2992650C00D038D4 /* LoginService.swift */; };
 		015627262992650C00D038D4 /* APIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271E2992650C00D038D4 /* APIContants.swift */; };
+		0156274E299BB36000D038D4 /* emailCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156274D299BB36000D038D4 /* emailCheckService.swift */; };
+		01562750299BB44800D038D4 /* EmailCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156274F299BB44800D038D4 /* EmailCheckModel.swift */; };
 		0A976B35029DA9F11F70CF8B /* Pods_CaZaIt_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */; };
 		7A61C8872983B6DF00427E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8862983B6DF00427E74 /* AppDelegate.swift */; };
 		7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8882983B6DF00427E74 /* SceneDelegate.swift */; };
@@ -76,6 +78,8 @@
 		0156271B2992650C00D038D4 /* SignupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		0156271D2992650C00D038D4 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0156271E2992650C00D038D4 /* APIContants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIContants.swift; sourceTree = "<group>"; };
+		0156274D299BB36000D038D4 /* emailCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailCheckService.swift; sourceTree = "<group>"; };
+		0156274F299BB44800D038D4 /* EmailCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckModel.swift; sourceTree = "<group>"; };
 		182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaZaIt_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		197D9EBB48678D619D0ACF46 /* Pods-CaZaIt_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaZaIt_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CaZaIt_iOS/Pods-CaZaIt_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7A61C8832983B6DF00427E74 /* CaZaIt_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaZaIt_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				015627192992650C00D038D4 /* SignUpService.swift */,
+				0156274D299BB36000D038D4 /* emailCheckService.swift */,
 			);
 			path = SignUp_Service;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				0156271B2992650C00D038D4 /* SignupModel.swift */,
+				0156274F299BB44800D038D4 /* EmailCheckModel.swift */,
 			);
 			path = SignUp_Model;
 			sourceTree = "<group>";
@@ -468,7 +474,9 @@
 				7AF4349629890C5E0057EE52 /* favoritesCustomCafeView.swift in Sources */,
 				7AF4349429890C4E0057EE52 /* favoritesBottomView.swift in Sources */,
 				7AF4349229890C320057EE52 /* favoritesTopView.swift in Sources */,
+				0156274E299BB36000D038D4 /* emailCheckService.swift in Sources */,
 				015626C52983E6B300D038D4 /* ReviewTableViewCell.swift in Sources */,
+				01562750299BB44800D038D4 /* EmailCheckModel.swift in Sources */,
 				015626842983CF2700D038D4 /* LoginViewController.swift in Sources */,
 				015627262992650C00D038D4 /* APIContants.swift in Sources */,
 				015626C32983E69D00D038D4 /* ReviewBaseTableViewCell.swift in Sources */,
