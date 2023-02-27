@@ -19,4 +19,6 @@ struct APIConstants {
     static let cafeinfoURL = baseURL + "/api/menu/cafe/1"
     
     static let emailcheckURL = baseURL + "/api/users/email"
+    
+    static let nicknamecheckURL = baseURL + "/api/users/nickname"
 }

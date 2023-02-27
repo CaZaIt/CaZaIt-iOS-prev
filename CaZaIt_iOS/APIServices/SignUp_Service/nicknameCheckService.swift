@@ -1,25 +1,38 @@
 //
-//  emailCheckService.swift
+//  nicknameCheckService.swift
 //  CaZaIt_iOS
 //
-//  Created by 강석호 on 2023/02/14.
+//  Created by 강석호 on 2023/02/27.
 //
 
 import Foundation
+
 import Alamofire
 //(1) 라이브러리 추가
 
-class emailCheckService {
+class nicknameCheckService {
     
-    static let shared = emailCheckService()
+    static let shared = nicknameCheckService()
 //(2)싱글통 객체를 선언해서 앱 어디에서든지 접근가능하도록 한다
     private init() {}
     
-    func emailcheck(email: String, completion: @escaping(NetworkResult<Any>) -> Void)
+    func nicknamecheck(nickname: String, completion: @escaping(NetworkResult<Any>) -> Void)
     {
+        //https://cazait.shop/api/users/email?email=rkdntlzl@naver.com
+        let url = "\(APIConstants.nicknamecheckURL)?nickName=\(nickname)" //통신할 API 주소
         
-        let url = "\(APIConstants.emailcheckURL)?email=\(email)" //통신할 API 주소
-                
+        //HTTP Headers : 요청 헤더
+//        let header : HTTPHeaders = ["Content-Type" : "application/json"]
+        
+        //요청 바디
+//        let body : Parameters = [
+//            "email" : email,
+//        ]
+////         키, 벨류 형식의 딕셔너리
+//        let queryParam = [
+//            "email" : email,
+//        ]
+        
         
         //요청서 //Request 생성
         //통신할 주소, HTTP메소드, 요청방식, 인코딩방식, 요청헤더
@@ -53,7 +66,7 @@ class emailCheckService {
     //통신이 성공하고 원하는 데이터가 올바르게 들어왔을때 처리하는 함수
     private func isVaildData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder() //서버에서 준 데이터를 Codable을 채택
-        guard let decodedData = try? decoder.decode(EmailCheckResponse.self, from: data)
+        guard let decodedData = try? decoder.decode(NicknameCheckResponse.self, from: data)
         //데이터가 변환이 되게끔 Response 모델 구조체로 데이터를 변환해서 넣고, 그 데이터를 NetworkResult Success 파라미터로 전달
         else { return .pathErr }
         

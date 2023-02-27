@@ -38,6 +38,8 @@
 		015627262992650C00D038D4 /* APIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156271E2992650C00D038D4 /* APIContants.swift */; };
 		0156274E299BB36000D038D4 /* emailCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156274D299BB36000D038D4 /* emailCheckService.swift */; };
 		01562750299BB44800D038D4 /* EmailCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156274F299BB44800D038D4 /* EmailCheckModel.swift */; };
+		019D3BBF29ACB90100EB035B /* NicknameCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D3BBE29ACB90100EB035B /* NicknameCheckModel.swift */; };
+		019D3BC129ACB96800EB035B /* nicknameCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D3BC029ACB96800EB035B /* nicknameCheckService.swift */; };
 		0A976B35029DA9F11F70CF8B /* Pods_CaZaIt_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */; };
 		7A61C8872983B6DF00427E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8862983B6DF00427E74 /* AppDelegate.swift */; };
 		7A61C8892983B6DF00427E74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A61C8882983B6DF00427E74 /* SceneDelegate.swift */; };
@@ -80,6 +82,8 @@
 		0156271E2992650C00D038D4 /* APIContants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIContants.swift; sourceTree = "<group>"; };
 		0156274D299BB36000D038D4 /* emailCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailCheckService.swift; sourceTree = "<group>"; };
 		0156274F299BB44800D038D4 /* EmailCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckModel.swift; sourceTree = "<group>"; };
+		019D3BBE29ACB90100EB035B /* NicknameCheckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameCheckModel.swift; sourceTree = "<group>"; };
+		019D3BC029ACB96800EB035B /* nicknameCheckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nicknameCheckService.swift; sourceTree = "<group>"; };
 		182DFCFAE6CBE4803434AB33 /* Pods_CaZaIt_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaZaIt_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		197D9EBB48678D619D0ACF46 /* Pods-CaZaIt_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaZaIt_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CaZaIt_iOS/Pods-CaZaIt_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7A61C8832983B6DF00427E74 /* CaZaIt_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaZaIt_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +278,7 @@
 			children = (
 				015627192992650C00D038D4 /* SignUpService.swift */,
 				0156274D299BB36000D038D4 /* emailCheckService.swift */,
+				019D3BC029ACB96800EB035B /* nicknameCheckService.swift */,
 			);
 			path = SignUp_Service;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			children = (
 				0156271B2992650C00D038D4 /* SignupModel.swift */,
 				0156274F299BB44800D038D4 /* EmailCheckModel.swift */,
+				019D3BBE29ACB90100EB035B /* NicknameCheckModel.swift */,
 			);
 			path = SignUp_Model;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 				015626842983CF2700D038D4 /* LoginViewController.swift in Sources */,
 				015627262992650C00D038D4 /* APIContants.swift in Sources */,
 				015626C32983E69D00D038D4 /* ReviewBaseTableViewCell.swift in Sources */,
+				019D3BBF29ACB90100EB035B /* NicknameCheckModel.swift in Sources */,
 				0156268E2983CF4B00D038D4 /* MyPageViewController.swift in Sources */,
 				015626B72983E61C00D038D4 /* BaseView.swift in Sources */,
 				0156268A2983CF3A00D038D4 /* SignUpViewController.swift in Sources */,
@@ -492,6 +499,7 @@
 				015626902983CF5000D038D4 /* MoreViewController.swift in Sources */,
 				015626982983D81B00D038D4 /* MainViewController.swift in Sources */,
 				015626AD2983D9DB00D038D4 /* topView.swift in Sources */,
+				019D3BC129ACB96800EB035B /* nicknameCheckService.swift in Sources */,
 				015626BD2983E66300D038D4 /* MyTableViewCell.swift in Sources */,
 				015627222992650C00D038D4 /* LoginModel.swift in Sources */,
 				015627212992650C00D038D4 /* SignUpService.swift in Sources */,

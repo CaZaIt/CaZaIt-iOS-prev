@@ -4,7 +4,7 @@
 //
 //  Created by 강석호 on 2023/01/09.
 //
-
+import Alamofire
 import Foundation
 import UIKit
 
@@ -44,7 +44,7 @@ final class SignUpViewController: UIViewController {
         return textField
     }()
     
-
+    
     
     //아이디 중복확인 버튼
     private let idButton: UIButton = {
@@ -99,7 +99,7 @@ final class SignUpViewController: UIViewController {
         textField.layer.borderWidth = 1
         textField.textColor = UIColor(r: 93, g: 36, b: 36)
         textField.setPlaceholder(color: UIColor(r: 181, g: 181, b: 181))
-
+        
         
         return textField
     }()
@@ -224,7 +224,7 @@ final class SignUpViewController: UIViewController {
         self.view.addSubview(self.idLabel)
         self.view.addSubview(self.idField)
         self.view.addSubview(self.idButton)
-//        self.view.addSubview(self.descriptionLabel)
+        //        self.view.addSubview(self.descriptionLabel)
         self.view.addSubview(self.joinButton)
         
         
@@ -244,10 +244,10 @@ final class SignUpViewController: UIViewController {
             self.emailButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
             self.emailButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
             
-//            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
-//            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-//            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
-//            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 214),
+            //            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
+            //            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+            //            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
+            //            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 214),
             
             self.pwLabel.heightAnchor.constraint(equalToConstant: 30),
             self.pwLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
@@ -297,40 +297,42 @@ final class SignUpViewController: UIViewController {
         
     }
     @objc func buttonClicked_1() {
-            // if clicked btn, present alert
-            let alert = UIAlertController(title: "사용 가능한 아이디입니다", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
-            
-            present(alert, animated: true, completion: nil)
-        }
+        // if clicked btn, present alert
+//        let alert = UIAlertController(title: "사용 가능한 아이디입니다", message: "", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+//        //            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
+//        //            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
+//
+//        present(alert, animated: true, completion: nil)
+        
+        nicknamecheck()
+    }
     
     @objc func buttonClicked_2() {
-            // if clicked btn, present alert
-//            let alert = UIAlertController(title: "사용 가능한 이메일입니다", message: "", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//
-//
-//            present(alert, animated: true, completion: nil)
+        // if clicked btn, present alert
+        //            let alert = UIAlertController(title: "사용 가능한 이메일입니다", message: "", preferredStyle: .alert)
+        //            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        //
+        //
+        //            present(alert, animated: true, completion: nil)
         
         //이메일 중복확인 주석으로 처리해놓기 일단
-//            emailcheck()
-        }
-        
+        emailcheck()
+    }
+    
     @objc func buttonClicked_3() {
-            // if clicked btn, present alert
-//            let alert = UIAlertController(title: "가입이 완료되었습니다", message: "", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//
-//            present(alert, animated: true, completion: nil)
-//            print("회원가입 성공")
-            signup()
-        }
+        // if clicked btn, present alert
+        //            let alert = UIAlertController(title: "가입이 완료되었습니다", message: "", preferredStyle: .alert)
+        //            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        //
+        //            present(alert, animated: true, completion: nil)
+        //            print("회원가입 성공")
+        signup()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-                self.view.endEditing(true)
-            }
+        self.view.endEditing(true)
+    }
     
 }
 
@@ -366,6 +368,8 @@ extension SignUpViewController {
         }
     }
     
+    
+    
     func emailcheck() {
         
         guard let email = emailField.text else { return }
@@ -375,7 +379,7 @@ extension SignUpViewController {
             switch response {
             case .success(let data):
                 guard let data = data as? EmailCheckResponse else { return }
-                let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
+                let alert = UIAlertController(title: data.data, message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 
                 self.present(alert, animated: true, completion: nil)
@@ -383,12 +387,58 @@ extension SignUpViewController {
             case .requestErr(let err):
                 print(err)
             case .pathErr:
+                let alert = UIAlertController(title: "사용할 수 없는 이메일 입니다", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
                 print("pathErr")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
+                let alert = UIAlertController(title: "사용할 수 없는 이메일 입니다", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
                 print("networkFail")
             }
         }
     }
+    
+    func nicknamecheck() {
+        
+        guard let nickname = idField.text else { return }
+        
+        
+        nicknameCheckService.shared.nicknamecheck(nickname: nickname) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? NicknameCheckResponse else { return }
+                let alert = UIAlertController(title: data.data, message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                print(data)
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                
+                let alert = UIAlertController(title: "중복된 닉네임입니다", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                let alert = UIAlertController(title: "사용할 수 없는 닉네임 입니다", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                print("networkFail")
+            }
+        }
+    }
+    
 }
+
