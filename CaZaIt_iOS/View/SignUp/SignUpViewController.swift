@@ -297,36 +297,17 @@ final class SignUpViewController: UIViewController {
         
     }
     @objc func buttonClicked_1() {
-        // if clicked btn, present alert
-//        let alert = UIAlertController(title: "사용 가능한 아이디입니다", message: "", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//        //            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
-//        //            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
-//
-//        present(alert, animated: true, completion: nil)
         
         nicknamecheck()
     }
     
     @objc func buttonClicked_2() {
-        // if clicked btn, present alert
-        //            let alert = UIAlertController(title: "사용 가능한 이메일입니다", message: "", preferredStyle: .alert)
-        //            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-        //
-        //
-        //            present(alert, animated: true, completion: nil)
         
-        //이메일 중복확인 주석으로 처리해놓기 일단
         emailcheck()
     }
     
     @objc func buttonClicked_3() {
-        // if clicked btn, present alert
-        //            let alert = UIAlertController(title: "가입이 완료되었습니다", message: "", preferredStyle: .alert)
-        //            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-        //
-        //            present(alert, animated: true, completion: nil)
-        //            print("회원가입 성공")
+        
         signup()
     }
     
@@ -339,7 +320,7 @@ final class SignUpViewController: UIViewController {
 
 extension SignUpViewController {
     
-    
+    //회원가입
     func signup() {
         
         guard let email = emailField.text else { return }
@@ -369,7 +350,7 @@ extension SignUpViewController {
     }
     
     
-    
+    //이메일 중복확인
     func emailcheck() {
         
         guard let email = emailField.text else { return }
@@ -404,6 +385,7 @@ extension SignUpViewController {
         }
     }
     
+    //닉네임 중복확인
     func nicknamecheck() {
         
         guard let nickname = idField.text else { return }
