@@ -21,18 +21,6 @@ class nicknameCheckService {
         //https://cazait.shop/api/users/email?email=rkdntlzl@naver.com
         let url = "\(APIConstants.nicknamecheckURL)?nickName=\(nickname)" //통신할 API 주소
         
-        //HTTP Headers : 요청 헤더
-//        let header : HTTPHeaders = ["Content-Type" : "application/json"]
-        
-        //요청 바디
-//        let body : Parameters = [
-//            "email" : email,
-//        ]
-////         키, 벨류 형식의 딕셔너리
-//        let queryParam = [
-//            "email" : email,
-//        ]
-        
         
         //요청서 //Request 생성
         //통신할 주소, HTTP메소드, 요청방식, 인코딩방식, 요청헤더

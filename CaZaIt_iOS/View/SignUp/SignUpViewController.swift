@@ -244,10 +244,6 @@ final class SignUpViewController: UIViewController {
             self.emailButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50),
             self.emailButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 180),
             
-            //            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
-            //            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            //            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -150),
-            //            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 214),
             
             self.pwLabel.heightAnchor.constraint(equalToConstant: 30),
             self.pwLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
