@@ -204,8 +204,6 @@ extension LoginViewController {
                 else {
                     let alert = UIAlertController(title: data.message, message: "", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-        //            alert.addAction(UIAlertAction(title: "DEFAULT", style: .default, handler: nil))
-        //            alert.addAction(UIAlertAction(title: "DESTRUCTIVE", style: .destructive, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
                     print(data.message)
