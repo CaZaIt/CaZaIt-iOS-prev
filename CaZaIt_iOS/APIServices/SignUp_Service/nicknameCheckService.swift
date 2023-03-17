@@ -8,12 +8,12 @@
 import Foundation
 
 import Alamofire
-//(1) 라이브러리 추가
+
 
 class nicknameCheckService {
     
     static let shared = nicknameCheckService()
-//(2)싱글통 객체를 선언해서 앱 어디에서든지 접근가능하도록 한다
+
     private init() {}
     
     func nicknamecheck(nickname: String, completion: @escaping(NetworkResult<Any>) -> Void)
@@ -22,8 +22,7 @@ class nicknameCheckService {
         let url = "\(APIConstants.nicknamecheckURL)?nickName=\(nickname)" //통신할 API 주소
         
         
-        //요청서 //Request 생성
-        //통신할 주소, HTTP메소드, 요청방식, 인코딩방식, 요청헤더
+
         let dataRequest = AF.request(url,
                                     method: .get,
                                     encoding: JSONEncoding.default)
