@@ -22,7 +22,7 @@ class emailCheckService {
                 
         
         //요청서 //Request 생성
-        //통신할 주소, HTTP메소드, 요청방식, 인코딩방식, 요청헤더
+        //통신할 주소,요청방식, 인코딩방식
         let dataRequest = AF.request(url,
                                     method: .get,
                                     encoding: JSONEncoding.default)

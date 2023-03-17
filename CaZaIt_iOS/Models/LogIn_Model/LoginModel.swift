@@ -14,7 +14,6 @@ struct LoginResponse: Codable {
     let result: String
 }
 
-// MARK: - DataClass
 struct LoginData: Codable {
     let email: String
     let id: Int
